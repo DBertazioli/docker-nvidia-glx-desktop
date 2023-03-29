@@ -374,18 +374,18 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime && echo "$TZ" > /etc/timezone
 
 # Copy scripts and configurations used to start the container
-COPY entrypoint.sh /etc/entrypoint.sh
-RUN chmod 755 /etc/entrypoint.sh
-COPY selkies-gstreamer-entrypoint.sh /etc/selkies-gstreamer-entrypoint.sh
-RUN chmod 755 /etc/selkies-gstreamer-entrypoint.sh
-COPY supervisord.conf /etc/supervisord.conf
-RUN chmod 755 /etc/supervisord.conf
+# COPY entrypoint.sh /etc/entrypoint.sh
+# RUN chmod 755 /etc/entrypoint.sh
+# COPY selkies-gstreamer-entrypoint.sh /etc/selkies-gstreamer-entrypoint.sh
+# RUN chmod 755 /etc/selkies-gstreamer-entrypoint.sh
+# COPY supervisord.conf /etc/supervisord.conf
+# RUN chmod 755 /etc/supervisord.conf
 
-EXPOSE 8080
+# EXPOSE 8080
 
-USER user
-ENV SHELL /bin/bash
-ENV USER user
-WORKDIR /home/user
+# USER user
+# ENV SHELL /bin/bash
+# ENV USER user
+# WORKDIR /home/user
 
-ENTRYPOINT ["/usr/bin/supervisord"]
+# ENTRYPOINT ["/usr/bin/supervisord"]
