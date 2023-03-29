@@ -103,12 +103,6 @@ RUN dpkg --add-architecture i386 && \
         net-tools \
         libglvnd-dev \
         libglvnd-dev:i386 \
-        libgl1-mesa-dev \
-        libgl1-mesa-dev:i386 \
-        libegl1-mesa-dev \
-        libegl1-mesa-dev:i386 \
-        libgles2-mesa-dev \
-        libgles2-mesa-dev:i386 \
         libglvnd0 \
         libglvnd0:i386 \
         libgl1 \
@@ -179,6 +173,17 @@ RUN dpkg --add-architecture i386 && \
         \"library_path\": \"libEGL_nvidia.so.0\"\n\
     }\n\
 }" > /usr/share/glvnd/egl_vendor.d/10_nvidia.json
+
+
+#removed from apt install
+#         libgl1-mesa-dev \
+#         libgl1-mesa-dev:i386 \
+#         libegl1-mesa-dev \
+#         libegl1-mesa-dev:i386 \
+#         libgles2-mesa-dev \
+#         libgles2-mesa-dev:i386 \
+
+
 
 # Anything below this line should be always kept the same between docker-nvidia-glx-desktop and docker-nvidia-egl-desktop
 
